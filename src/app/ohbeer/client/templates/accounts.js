@@ -3,9 +3,9 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './login.html';
 import './register.html';
-import './home.html'
+import './home.html';
 
-Template.registerMobile.events({
+Template.registerMobile.events ({
 	'submit .sign-up-form' : function (event, template) {
 		event.preventDefault();
 
@@ -43,14 +43,14 @@ Template.registerMobile.events({
 					Materialize.toast('Account creation failed', 4000);
 				} else {
 					console.log('going home!');
-					FlowRouter.go('home');
+					FlowRouter.go('login');
 				}
 			});
 		}
 	}
 });
 
-Template.loginMobile.events({
+Template.loginMobile.events ({
 	'submit .login-form': function(event, template) {
 		event.preventDefault();
 
@@ -84,6 +84,9 @@ Template.loginMobile.events({
         			console.log("error");
           			Materialize.toast('Unknown Error', 4000);
         		} else {
+        			Accounts.config({
+   						loginExpirationInDays: null
+					}) 
         			console.log('going home!');
           			FlowRouter.go('home');
         		}
