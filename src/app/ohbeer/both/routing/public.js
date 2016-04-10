@@ -23,6 +23,20 @@ publicRoutes.route('/home', {
 	}
 });
 
+publicRoutes.route('/profile', {
+	name: 'profile',
+	action() {
+		BlazeLayout.render("mainLayout", {content: "profileMobile"});
+	}
+});
+
+publicRoutes.route('/order', {
+	name: 'order',
+	action() {
+		BlazeLayout.render("mainLayout", {content: "orderMobile"});
+	}
+});
+
 FlowRouter.notFound = {
 	action() {
 		BlazeLayout.render( 'mainLayout', { yield: 'notFound' })
