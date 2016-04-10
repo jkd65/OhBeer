@@ -27,11 +27,11 @@ Template.registerMobile.events({
 		if( !isValidEmail || !isValidPassword) {
 			if(!isValidEmail) {
 				console.log("error");
-				sAlert.error('Invalid email address');
+				Materialize.toast('Invalid email address', 4000);
 			}
 			if(!isValidPassword) {
 				console.log("error");
-				sAlert.error('Your password must be at least 8 characters long');
+				Materialize.toast('Password must be at least 8 characters long', 4000);
 			}
 		} else {
 			Accounts.createUser({
@@ -40,7 +40,7 @@ Template.registerMobile.events({
 			}, function (error) {
 				if (error) {
 					console.log("error");
-					sAlert.error('Account creation failed');
+					Materialize.toast('Account creation failed', 4000);
 				} else {
 					console.log('going home!');
 					FlowRouter.go('home');
@@ -72,19 +72,20 @@ Template.loginMobile.events({
 		if (!isValidEmail || !isValidPassword) {
       		if (!isValidEmail) {
       			console.log("error");
-        		sAlert.error('Invalid email address');
+        		Materialize.toast('Email address is incorrect', 4000);
       		}
       		if (!isValidPassword) {
       			console.log("error");
-        		sAlert.error('Your password must be at least 8 characters long');
+        		Materialize.toast('Password is incorrect', 4000);
       		}
     	} else {
   			Meteor.loginWithPassword(emailAddress, password, function (error) {
         		if (error) {
         			console.log("error");
-          			sAlert.error('Account login failed for unknown reasons :(');
+          			Materialize.toast('Unknown Error', 4000);
         		} else {
-          			Router.go('homeMobile');
+        			console.log('going home!');
+          			FlowRouter.go('home');
         		}
       		});
     	}

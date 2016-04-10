@@ -1,21 +1,31 @@
 <template name="mainLayout">
 
-
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/home" class="brand-logo">Oh, Beer!</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Payment</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav>
+  <a href="#" class="brand-logo center">Oh, Beer!</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/home">Home</a></li>
+      <li><a href="">Order</a></li>
+      <li><a href="">Feedback</a></li>
+    </ul>
+    <ul id="slide-out" class="side-nav">
+      <li><a href="/home">Home</a></li>
+      <li><a href="">Order</a></li>
+      <li><a href="">Feedback</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+</nav>
+<br>
 
   <body>
-    <main>
-      {{>Template.dynamic template=content}}
-    </main>
-    <footer>test</footer>
+    <div class="container">
+      <main>
+        {{>Template.dynamic template=content}}
+      </main>
+    </div>
+
+    <div class="container">
+      <footer>TEAM CJK</footer>
+    </div>
   </body>
+
 </template>
