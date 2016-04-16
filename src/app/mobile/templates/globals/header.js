@@ -2,8 +2,8 @@ if (Meteor.isCordova){
 
   Template.headerMobile.helpers({
       brandLink() {
-          let login = FlowRouter.path('splash'),
-              index = FlowRouter.path('index');
+          let login = FlowRouter.path('splashMobile'),
+              index = FlowRouter.path('indexMobile');
           return !Meteor.loggingIn() && !Meteor.userId() ? login : index;
       }
   });

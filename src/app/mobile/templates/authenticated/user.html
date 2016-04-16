@@ -1,5 +1,18 @@
 <template name="userProfile">
-  <p>
-    Hello !
-  </p>
-</template>
+  <div class="row">
+    <h4 class="page-header center">Profile Picture</h4>
+    <hr>
+    <img class="circle center-block" src='{{fakeData}}' />
+    <br />
+    <div class="center-align">
+      <button class="btn waves-effect waves-light saveImage" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+    <br />
+    <div class="center-align">
+        <div class="waves-effect waves-light btn newImage">New Image</div>
+    </div>
+
+  </div>
+  </template>

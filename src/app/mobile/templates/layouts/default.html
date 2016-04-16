@@ -1,23 +1,25 @@
 <template name="defaultMobile">
 	{{>bertAlert}}
-	{{>header}}
+	{{>headerMobile}}
 	<div class="container">
+	{{#if Template.subscriptionsReady}}
 		{{#if loggingIn}}
 			{{> loading}}
 		{{else}}
 			{{#if authenticated}}
-			{{#if userProfilez }}
-				{{> userProfile}}
-			{{else }}
+				{{userProfilez}}
+				{{userPaymentz}}
 				{{#unless redirectAuthenticated}}
 					{{> Template.dynamic template=yield}}
 				{{/unless}}
-				{{/if}}
 			{{else}}
 				{{#unless redirectPublic}}
 					{{> Template.dynamic template=yield}}
 				{{/unless}}
 			{{/if}}
 		{{/if}}
+	{{else}}
+		{{>loading}}
+	{{/if}}
 	</div>
 </template>

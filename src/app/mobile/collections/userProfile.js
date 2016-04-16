@@ -4,12 +4,6 @@ Meteor.users.allow({
   remove: () => false
 });
 
-Meteor.users.deny({
-  insert: () => true,
-  update: () => true,
-  remove: () => true
-});
-
 User = new SimpleSchema({
 	// username: {
 	// 	type: String,
@@ -31,10 +25,12 @@ User = new SimpleSchema({
 		type: Date
 	},
 	profilePicture: {
-    type: String
+    type: String,
+    optional: true
   },
   payment: {
-    type: String
+    type: String,
+    optional: true
   }
 });
 Meteor.users.attachSchema(User);

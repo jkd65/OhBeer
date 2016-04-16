@@ -16,10 +16,15 @@ if (Meteor.isCordova){
 			return !Meteor.loggingIn() && Meteor.user();
 		},
 		userProfilez() {
+			console.log(JSON.stringify(Meteor.user().profilePicture))
 			if (!Meteor.user().profilePicture) {
-					return true;
+				FlowRouter.go('userMobile')
 			}
-			return false;
+		},
+		userPaymentz() {
+			if (!Meteor.user().payment) {
+				FlowRouter.go('paymentMobile')
+			}
 		},
 		redirectAuthenticated() {
 		 	return handleRedirect([

@@ -12,7 +12,14 @@ if (Meteor.isCordova){
   authenticatedRoutes.route( '/user', {
     name: 'userMobile',
     action() {
-      BlazeLayout.render( 'defaultMobile', { yield: 'userMobile' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'userProfile' } );
+    }
+  });
+
+  authenticatedRoutes.route( '/payment', {
+    name: 'paymentMobile',
+    action() {
+      BlazeLayout.render( 'defaultMobile', { yield: 'paymentProfile' } );
     }
   });
 
