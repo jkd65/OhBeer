@@ -1,0 +1,14 @@
+<template name="headerMobile">
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper container">
+                <a class="brand-logo" href="{{brandLink}}">Oh, Beer!</a>
+                {{#if currentUser}}
+                	{{> authenticatedNavigation}}
+                {{else}}
+                	{{> publicNavigation}}
+            	{{/if}}
+            </div>
+        </nav>
+    </div>
+</template>
