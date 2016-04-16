@@ -15,9 +15,6 @@ if (Meteor.isCordova){
 		authenticated() {
 			return !Meteor.loggingIn() && Meteor.user();
 		},
-		profileLegit() {
-			return Meteor.user.stepone();
-		},
 		redirectAuthenticated() {
 		 	return handleRedirect([
 				'loginMobile',
