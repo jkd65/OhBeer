@@ -2,11 +2,11 @@ import resetPassword from '../../modules/reset-password';
 
 if (Meteor.isCordova){
 
-  Template.resetPassword.onRendered( () => {
+  Template.resetPasswordMobile.onRendered( () => {
     resetPassword( { form: '#reset-password', template: Template.instance() } );
   });
 
-  Template.resetPassword.events({
+  Template.resetPasswordMobile.events({
     'submit form': ( event ) => event.preventDefault()
   });
 

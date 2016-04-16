@@ -2,11 +2,11 @@ import recoverPassword from '../../modules/recover-password';
 
   if (Meteor.isCordova){
 
-  Template.recoverPassword.onRendered( () => {
+  Template.recoverPasswordMobile.onRendered( () => {
     recoverPassword( { form: '#recover-password', template: Template.instance() } );
   });
 
-  Template.recoverPassword.events({
+  Template.recoverPasswordMobile.events({
     'submit form': ( event ) => event.preventDefault()
   });
 

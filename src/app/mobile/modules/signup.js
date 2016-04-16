@@ -13,6 +13,7 @@ let _handleSignup = () => {
       Bert.alert( error.reason, 'danger' );
     } else {
       Bert.alert( 'Welcome!', 'success' );
+      FlowRouter.go('dashboardMobile');
     }
   });
 };

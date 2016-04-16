@@ -1,41 +1,41 @@
 if (Meteor.isCordova){
 
   const publicRoutes = FlowRouter.group({
-    name: 'public'
+    name: 'publicMobile'
   });
 
-  publicRoutes.route( '/splash', {
-    name: 'splash',
+  publicRoutes.route( '/splashMobile', {
+    name: 'splashMobile',
     action() {
-      BlazeLayout.render( 'default', { yield: 'splash' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'splashMobile' } );
     }
   });
 
-  publicRoutes.route( '/signup', {
-    name: 'signup',
+  publicRoutes.route( '/signupMobile', {
+    name: 'signupMobile',
     action() {
-      BlazeLayout.render( 'default', { yield: 'signup' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'signupMobile' } );
     }
   });
 
-  publicRoutes.route( '/login', {
-    name: 'login',
+  publicRoutes.route( '/loginMobile', {
+    name: 'loginMobile',
     action() {
-      BlazeLayout.render( 'default', { yield: 'login' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'loginMobile' } );
     }
   });
 
-  publicRoutes.route( '/recover-password', {
-    name: 'recover-password',
+  publicRoutes.route( '/recover-passwordMobile', {
+    name: 'recover-passwordMobile',
     action() {
-      BlazeLayout.render( 'default', { yield: 'recoverPassword' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'recoverPasswordMobile' } );
     }
   });
 
-  publicRoutes.route( '/reset-password/:token', {
+  publicRoutes.route( '/reset-passwordMobile/:token', {
     name: 'reset-password',
     action() {
-      BlazeLayout.render( 'default', { yield: 'resetPassword' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'resetPasswordMobile' } );
     }
   });
 

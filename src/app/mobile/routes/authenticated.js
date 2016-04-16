@@ -2,17 +2,17 @@ if (Meteor.isCordova){
 
   const authenticatedRoutes = FlowRouter.group( { name: 'authenticated' } );
 
-  authenticatedRoutes.route( '/', {
+  authenticatedRoutes.route( '/Mobile', {
     name: 'indexMobile',
     action() {
-      BlazeLayout.render( 'default', { yield: 'index' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'indexMobile' } );
     }
   });
 
-  authenticatedRoutes.route( '/dashboard', {
-    name: 'dashboard',
+  authenticatedRoutes.route( '/dashboardMobile', {
+    name: 'dashboardMobile',
     action() {
-      BlazeLayout.render( 'default', { yield: 'dashboard' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'dashboardMobile' } );
     }
   });
 

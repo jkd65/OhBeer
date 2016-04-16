@@ -2,7 +2,7 @@ if (Meteor.isCordova){
 
   FlowRouter.notFound = {
     action() {
-      BlazeLayout.render( 'default', { yield: 'notFound' } );
+      BlazeLayout.render( 'defaultMobile', { yield: 'notFound' } );
     }
   };
 

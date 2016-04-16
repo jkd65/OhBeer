@@ -2,11 +2,11 @@ import signup from '../../modules/signup';
 
 if (Meteor.isCordova){
 
-  Template.signup.onRendered( () => {
+  Template.signupMobile.onRendered( () => {
     signup({ form: '#signup', template: Template.instance() });
   });
 
-  Template.signup.events({
+  Template.signupMobile.events({
     'submit form': ( event ) => event.preventDefault()
   });
 
