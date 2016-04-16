@@ -9,6 +9,13 @@ if (Meteor.isCordova){
     }
   });
 
+  authenticatedRoutes.route( '/user', {
+    name: 'userMobile',
+    action() {
+      BlazeLayout.render( 'defaultMobile', { yield: 'userMobile' } );
+    }
+  });
+
   authenticatedRoutes.route( '/dashboardMobile', {
     name: 'dashboardMobile',
     action() {

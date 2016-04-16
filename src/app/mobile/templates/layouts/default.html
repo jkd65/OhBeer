@@ -6,9 +6,13 @@
 			{{> loading}}
 		{{else}}
 			{{#if authenticated}}
+			{{#if userProfilez }}
+				{{> userProfile}}
+			{{else }}
 				{{#unless redirectAuthenticated}}
 					{{> Template.dynamic template=yield}}
 				{{/unless}}
+				{{/if}}
 			{{else}}
 				{{#unless redirectPublic}}
 					{{> Template.dynamic template=yield}}

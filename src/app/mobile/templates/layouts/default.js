@@ -15,6 +15,12 @@ if (Meteor.isCordova){
 		authenticated() {
 			return !Meteor.loggingIn() && Meteor.user();
 		},
+		userProfilez() {
+			if (!Meteor.user().profilePicture) {
+					return true;
+			}
+			return false;
+		},
 		redirectAuthenticated() {
 		 	return handleRedirect([
 				'loginMobile',
