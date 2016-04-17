@@ -1,0 +1,14 @@
+<template name="barsMobile">
+  <h4>All Bars</h4>
+  <ul class="collection">
+    {{#each findBars}}
+      <li class="collection-item avatar">
+        <span class="title">{{name}}</span>
+        <p>{{location.address}}<br>
+           {{phone}}
+        </p>
+        <a href="{{pathFor 'menuMobile'}}" class="secondary-content"><i class="material-icons">navigate_next</i></a>
+      </li>
+      {{/each}}
+    </ul>
+</template>

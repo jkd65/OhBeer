@@ -30,4 +30,18 @@ if (Meteor.isCordova){
     }
   });
 
+  authenticatedRoutes.route( '/bars', {
+    name: 'barsMobile',
+    action() {
+      BlazeLayout.render( 'defaultMobile', { yield: 'barsMobile' } );
+    }
+  });
+
+  authenticatedRoutes.route( '/bars/:id', {
+    name: 'menuMobile',
+    action() {
+      BlazeLayout.render( 'defaultMobile', {yield: 'menuMobile' } );
+    }
+  })
+
 }

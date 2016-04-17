@@ -6,4 +6,11 @@ if (Meteor.isCordova){
     });
   });
 
+  Template.authenticatedNavigationMobile.events({
+    'click .logout' (event) {
+      event.preventDefault()
+      Meteor.logout()
+    }
+  })
+
 }

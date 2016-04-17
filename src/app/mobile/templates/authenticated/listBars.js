@@ -1,10 +1,10 @@
-  if (Meteor.isCordova){
+if (Meteor.isCordova){
 
-  Template.indexMobile.onCreated( () => {
+  Template.barsMobile.onCreated( () => {
       Template.instance().subscribe('allBars')
   })
 
-  Template.indexMobile.helpers({
+  Template.barsMobile.helpers({
     getLocation() {
       let location = Session.get('currentLocation')
       return location
@@ -15,12 +15,5 @@
       return Bars.find()
     }
   })
-
-  Template.indexMobile.events({
-    'click .location' (event){
-      Session.set('currentLocation', Geolocation.latLng());
-    }
-  })
-
 
 }
