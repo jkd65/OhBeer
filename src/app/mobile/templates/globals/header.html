@@ -2,11 +2,11 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper container">
-                <a class="brand-logo" href="{{brandLink}}">Oh, BeerMe!</a>
+                <a class="brand-logo center" href="{{brandLink}}">Oh, Beer Mobile!</a>
                 {{#if currentUser}}
-                	{{> authenticatedNavigation}}
+                	{{> authenticatedNavigationMobile}}
                 {{else}}
-                	{{> publicNavigation}}
+                	{{> publicNavigationMobile}}
             	{{/if}}
             </div>
         </nav>

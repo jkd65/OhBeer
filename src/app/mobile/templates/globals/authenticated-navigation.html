@@ -1,0 +1,7 @@
+<template name="authenticatedNavigationMobile">
+  <ul id="slide-out" class="side-nav">
+    <li class="{{currentRoute 'paymentMobile'}}"><a href="{{pathFor 'paymentMobile'}}">Change payment</a></li>
+    <li class="{{currentRoute 'dashboardMobile'}}"><a href="{{pathFor 'dashboardMobile'}}">Dashboard</a></li>
+  </ul>
+	<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+</template>

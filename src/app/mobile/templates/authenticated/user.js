@@ -2,17 +2,17 @@ import faker from 'faker';
 
 if (Meteor.isCordova) {
 
-  Template.userProfile.onRendered( () => {
+  Template.userMobile.onRendered( () => {
     Session.set("profilePicture", faker.image.avatar());
   })
 
-  Template.userProfile.helpers({
+  Template.userMobile.helpers({
     fakeData(){
       return Session.get("profilePicture");
     }
   })
 
-  Template.userProfile.events({
+  Template.userMobile.events({
     'click .newImage' (event) {
       Session.set("profilePicture", faker.image.avatar());
     },

@@ -36,7 +36,8 @@ User = new SimpleSchema({
 		type: Date
 	},
   profile: {
-    type: userProfile
+    type: userProfile,
+    optional: true
   }
 });
 

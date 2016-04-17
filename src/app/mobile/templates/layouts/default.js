@@ -9,7 +9,7 @@ if (Meteor.isCordova){
 	};
 
 	Template.defaultMobile.onCreated(() => {
-		Template.instance().subscribe('userProfile')
+		Template.instance().subscribe('userMobile')
 	})
 
 	Template.defaultMobile.helpers({

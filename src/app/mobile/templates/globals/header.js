@@ -22,4 +22,10 @@ if (Meteor.isCordova){
       }
   });
 
+  Template.headerMobile.onRendered( () => {
+    $(".button-collapse").sideNav({
+      closeOnClick: true
+    });
+  });
+
 }
