@@ -7,10 +7,18 @@
 			{{> loading}}
 		{{else}}
 			{{#if authenticated}}
-				{{userProfilez}}
-				{{userPaymentz}}
 				{{#unless redirectAuthenticated}}
-					{{> Template.dynamic template=yield}}
+				{{#if Template.subscriptionsReady}}
+					{{#if userProfilez}}
+						{{> userProfile}}
+					{{else}}
+						{{#if userPaymentz}}
+							{{> paymentMobile}}
+						{{else}}
+							{{> Template.dynamic template=yield}}
+						{{/if}}
+					{{/if}}
+				{{/if}}
 				{{/unless}}
 			{{else}}
 				{{#unless redirectPublic}}

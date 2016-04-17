@@ -8,6 +8,10 @@ if (Meteor.isCordova){
 		}
 	};
 
+	Template.defaultMobile.onCreated(() => {
+		Template.instance().subscribe('userProfile')
+	})
+
 	Template.defaultMobile.helpers({
 		loggingIn() {
 			return Meteor.loggingIn();
@@ -16,15 +20,16 @@ if (Meteor.isCordova){
 			return !Meteor.loggingIn() && Meteor.user();
 		},
 		userProfilez() {
-			console.log(JSON.stringify(Meteor.user().profilePicture))
-			if (!Meteor.user().profilePicture) {
-				FlowRouter.go('userMobile')
+			if (typeof Meteor.user().profile.profilePicture == "undefined") {
+				return true
 			}
+			return false
 		},
 		userPaymentz() {
-			if (!Meteor.user().payment) {
-				FlowRouter.go('paymentMobile')
+			if (typeof Meteor.user().profile.payment == "undefined") {
+				return true
 			}
+			return false
 		},
 		redirectAuthenticated() {
 		 	return handleRedirect([

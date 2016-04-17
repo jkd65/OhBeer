@@ -4,6 +4,17 @@ Meteor.users.allow({
   remove: () => false
 });
 
+userProfile = new SimpleSchema({
+  profilePicture: {
+    type: String,
+    optional: true
+  },
+  payment: {
+    type: String,
+    optional: true
+  }
+})
+
 User = new SimpleSchema({
 	// username: {
 	// 	type: String,
@@ -24,13 +35,9 @@ User = new SimpleSchema({
 	createdAt: {
 		type: Date
 	},
-	profilePicture: {
-    type: String,
-    optional: true
-  },
-  payment: {
-    type: String,
-    optional: true
+  profile: {
+    type: userProfile
   }
 });
+
 Meteor.users.attachSchema(User);

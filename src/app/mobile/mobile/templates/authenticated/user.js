@@ -20,10 +20,9 @@ if (Meteor.isCordova) {
     'click .saveImage' (event) {
       Meteor.users.update(Meteor.userId(), {
         $set: {
-          profilePicture: Session.get("profilePicture")
+          "profile.profilePicture": Session.get("profilePicture")
         }
       });
-      FlowRouter.go('paymentMobile')
     }
   })
 
