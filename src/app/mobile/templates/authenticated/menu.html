@@ -19,7 +19,7 @@
         {{#if inStock}}
           <p>{{prettyPrice price}}</p>
         {{else}}
-        <p>Out of Stock</p>
+          <p>Out of Stock</p>
         {{/if}}
         <a class="secondary-content drink-count" id="{{_id}}">
           <i class="material-icons remove-drink">remove</i>
@@ -47,6 +47,17 @@
 
 <template name="checkoutFooter">
   <div class="checkout-bottom deep-purple lighten-5">
-    Hello
+    <h4 class="center-align">
+      Order Total: 18.00
+      <i class="material-icons remove-drink">keyboard_arrow_up</i>
+    </h4>
   </div>
+</template>
+
+<template name="currentOrder">
+  <p>Item One</p>
+  <p>Item One</p>
+  <p>Item One</p>
+  <p>Item One</p>
+  <p>Item One</p>
 </template>

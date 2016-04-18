@@ -44,4 +44,11 @@ if (Meteor.isCordova){
     }
   })
 
+  authenticatedRoutes.route('/order-confirmation', {
+    name: 'orderConfirmation',
+    action() {
+      BlazeLayout.render('defaultMobile', {yield: 'orderConfirmation'})
+    }
+  })
+
 }
