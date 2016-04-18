@@ -16,4 +16,10 @@ if (Meteor.isCordova){
     }
   })
 
+  Template.barsMobile.events({
+    'click .setBarSession' (event) {
+      Session.set('currentBar', Bars.findOne(event.currentTarget.id))
+    }
+  })
+
 }

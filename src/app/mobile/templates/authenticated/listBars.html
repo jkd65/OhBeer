@@ -1,5 +1,15 @@
 <template name="barsMobile">
-  <h4>All Bars</h4>
+  <h4 class="center-align">Search Bars</h4>
+  <br />
+  <br />
+  <form>
+    <div class="input-field">
+      <input id="search" type="search" required>
+      <label for="search"><i class="material-icons">search</i></label>
+      <i class="material-icons">close</i>
+    </div>
+  </form>
+
   <ul class="collection">
     {{#each findBars}}
       <li class="collection-item avatar">
@@ -7,7 +17,7 @@
         <p>{{location.address}}<br>
            {{phone}}
         </p>
-        <a href="{{pathFor 'menuMobile'}}/{{_id}}" class="secondary-content"><i class="material-icons">navigate_next</i></a>
+        <a href="{{pathFor 'menuMobile'}}/{{_id}}" class="secondary-content setBarSession" id="{{_id}}"><i class="material-icons">navigate_next</i></a>
       </li>
       {{/each}}
     </ul>

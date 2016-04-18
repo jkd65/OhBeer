@@ -9,10 +9,18 @@ userProfile = new SimpleSchema({
     type: String,
     optional: true
   },
-  payment: {
+  card: {
     type: String,
     optional: true
-  }
+  },
+  cvc: {
+    type: String,
+    optional: true
+  },
+  expiration: {
+    type: String,
+    optional: true
+  },
 })
 
 User = new SimpleSchema({

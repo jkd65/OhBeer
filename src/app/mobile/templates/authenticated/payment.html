@@ -1,6 +1,10 @@
 <template name="paymentMobile">
   {{#autoForm id="paymentInfo" collection="Meteor.users" doc=currentUser type="update"}}
-    {{>afQuickField name="profile.payment"}}
-    <button type="submit">Submit</button>
+    {{>afQuickField name="profile.card"}}
+    {{>afQuickField name="profile.cvc"}}
+    {{>afQuickField name="profile.expiration"}}
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+    </button>
   {{/autoForm}}
 </template>
