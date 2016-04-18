@@ -1,7 +1,6 @@
 <template name="defaultMobile">
 	{{>bertAlert}}
 	{{>headerMobile}}
-	<div class="container">
 	{{#if Template.subscriptionsReady}}
 		{{#if loggingIn}}
 			{{> loading}}
@@ -15,7 +14,10 @@
 						{{#if userPaymentz}}
 							{{> paymentMobile}}
 						{{else}}
+						<div class="container" style="margin-bottom: 15vh">
 							{{> Template.dynamic template=yield}}
+						</div>
+							{{> Template.dynamic template=fixedFooter}}
 						{{/if}}
 					{{/if}}
 				{{/if}}
@@ -29,5 +31,4 @@
 	{{else}}
 		{{>loading}}
 	{{/if}}
-	</div>
 </template>

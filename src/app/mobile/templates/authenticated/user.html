@@ -1,18 +1,26 @@
 <template name="userMobile">
-  <div class="row">
-    <h4 class="page-header center">Profile Picture</h4>
-    <hr>
-    <img class="circle center-block" src='{{fakeData}}' />
-    <br />
-    <div class="center-align">
-      <button class="btn waves-effect waves-light saveImage" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
-    <br />
-    <div class="center-align">
-        <div class="waves-effect waves-light btn newImage">New Image</div>
-    </div>
+  <div class="valign-wrapper valign-helper-logged-out">
+    <div class="container valign">
+      <div class="row">
+        <div class="col s12 white z-depth-1 inner-padding">
+          <div class="row">
+            <h4 class="page-header center">Profile Picture</h4>
+            <hr>
+            <img class="circle center-block" src='{{fakeData}}' />
+            <br />
+            <div class="center-align">
+              <button class="btn waves-effect waves-light saveImage" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+            <br />
+            <div class="center-align">
+              <div class="waves-effect waves-light btn newImage">New Image</div>
+            </div>
 
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  </template>
+</template>

@@ -40,7 +40,7 @@ if (Meteor.isCordova){
   authenticatedRoutes.route( '/bars/:id', {
     name: 'menuMobile',
     action() {
-      BlazeLayout.render( 'defaultMobile', {yield: 'menuMobile' } );
+      BlazeLayout.render( 'defaultMobile', {yield: 'menuMobile', fixedFooter: 'checkoutFooter' } );
     }
   })
 

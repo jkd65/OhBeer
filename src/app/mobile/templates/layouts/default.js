@@ -26,7 +26,9 @@ if (Meteor.isCordova){
 			return false
 		},
 		userPaymentz() {
-			if (typeof Meteor.user().profile.payment == "undefined") {
+			if (typeof Meteor.user().profile.card == "undefined" &&
+					typeof Meteor.user().profile.cvc == "undefined" &&
+					typeof Meteor.user().profile.expiration == "undefined" ) {
 				return true
 			}
 			return false

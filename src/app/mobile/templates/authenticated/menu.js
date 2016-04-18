@@ -1,9 +1,16 @@
+import lodash from 'lodash'
+let _ = lodash
+
 if(Meteor.isCordova){
 
   Template.menuMobile.onRendered(() => {
-    $('.collapsible').collapsible({
-      accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
+    Session.set('currentOrder', {
+      owner: Meteor.userId(),
+      barId: FlowRouter.getParam('id'),
+      order: [],
+      tipTotal: 0
+    })
+    Session.set('currentItems',{})
   })
 
   Template.menuMobile.onCreated(() => {
@@ -32,6 +39,39 @@ if(Meteor.isCordova){
       return MenuItems.find({
         category: category
       })
+    },
+    currentQuantity(id) {
+      let currentItems = Session.get('currentItems')
+      if (typeof currentItems[id] != "undefined"){
+        return currentItems[id]
+      }
+      return 0
+    }
+  })
+
+  Template.menuMobile.events({
+    'click .add-drink' (event) {
+      let itemId = event.currentTarget.parentElement.id
+      let currentOrder = Session.get('currentOrder')
+      let currentItems = Session.get('currentItems')
+
+      console.log(currentItems)
+
+      if (currentItems[itemId]){
+        currentItems[itemId] += 1
+      } else {
+        currentItems[itemId] = 1
+      }
+      Session.set('currentItems', currentItems)
+    },
+    'click .remove-drink' (event) {
+      let itemId = event.currentTarget.parentElement.id
+      let currentItems = Session.get('currentItems')
+
+      if (currentItems[itemId] > 0){
+        currentItems[itemId] -= 1
+      }
+      Session.set('currentItems', currentItems)
     }
   })
 }
