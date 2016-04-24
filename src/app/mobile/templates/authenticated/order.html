@@ -1,5 +1,9 @@
 <template name="orderConfirmation">
-  <h3>Order #11</h3>
-  
+  {{#if Template.subscriptionsReady}}
+  <h3>Order {{orderNum}}</h3>
+
   <p>Your order was submitted!</p>
+  {{else}}
+    {{> loading}}
+  {{/if}}
 </template>

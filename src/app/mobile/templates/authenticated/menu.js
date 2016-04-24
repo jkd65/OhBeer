@@ -126,7 +126,7 @@ if(Meteor.isCordova){
                 'quantity': value
               })
             })
-            
+
             Tickets.insert({
               'owner': Meteor.userId(),
               'barId': Session.get('currentBar')._id,
