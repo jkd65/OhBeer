@@ -110,7 +110,6 @@ if(Meteor.isCordova){
 
   Template.checkoutFooter.events({
     'click .checkout-bottom' (event) {
-      console.log(event)
       MaterializeModal.display({
         bodyTemplate: "currentOrder",
         submitLabel: "Submit",
@@ -118,6 +117,25 @@ if(Meteor.isCordova){
         callback: (err, rtn) => {
           if (rtn.submit){
             FlowRouter.go('orderConfirmation')
+            let quantities = Session.get('currentItems')
+            let insertDrinks = []
+
+            _.forEach(quantities, function(value, key){
+              insertDrinks.push({
+                'item': key,
+                'quantity': value
+              })
+            })
+            
+            Tickets.insert({
+              'owner': Meteor.userId(),
+              'barId': Session.get('currentBar')._id,
+              'order': insertDrinks,
+              'orderTotal': Session.get('currentTotal'),
+              'tipTotal': 0,
+              'status': 'pending',
+              'orderNum': 123
+            })
           }
         }
       })
