@@ -1,15 +1,19 @@
 <template name="splashMobile">
-	<div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text awesome">Oh, Beer!</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Ordering drinks made easy.</h5>
-      </div>
-      <div class="row center">
-        <a href="{{pathFor 'signupMobile'}}" id="download-button" class="btn-large waves-effect waves-light">Sign Up</a>
-				<a href="{{pathFor 'loginMobile'}}" id="download-button" class="btn-large waves-effect waves-light">Login</a>
-      </div>
-    </div>
-  </div>
+	<div id="index-banner" class="parallax-container">
+	    <div class="section no-pad-bot">
+	      <div class="container">
+	        <br><br>
+	        <h1 class="header center white-text text-lighten-2">Oh, Beer!</h1>
+	        <div class="row center">
+	          <h5 class="header col s12 light white-text">Ordering drinks made easy.</h5>
+	        </div>
+	        <div class="row center">
+						<a href="{{pathFor 'signupMobile'}}" id="download-button" class="btn-large waves-effect waves-light">Sign Up</a>
+						<a href="{{pathFor 'loginMobile'}}" id="download-button" class="btn-large waves-effect waves-light">Login</a>
+	        </div>
+	      </div>
+	      <br><br>
+	    </div>
+	    <div class="parallax"><img src="/b-b.png" alt="Unsplashed background img 1" style="max-width: 100%; transform: translate3d(-50%, 252px, 0px);"></div>
+	  </div>
 </template>
