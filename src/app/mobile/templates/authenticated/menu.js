@@ -14,7 +14,9 @@ if(Meteor.isCordova){
       tipTotal: 0
     })
 
+    Session.set('itemList',[])
     Session.set('currentItems',{})
+    Session.set('currentTotal',0)
   })
 
   Template.menuMobile.onCreated(() => {
@@ -30,7 +32,6 @@ if(Meteor.isCordova){
       return MenuItems.find();
     },
     categoryItems() {
-      console.log(MenuItems.find().fetch())
       let categoryArray = [];
       MenuItems.find().forEach((item) => {
         if(categoryArray.indexOf(item.category) == -1){
@@ -51,34 +52,65 @@ if(Meteor.isCordova){
       }
       return 0
     }
-  })
+  }),
+
+  Template.checkoutFooter.helpers({
+    orderTotal() {
+      return Session.get('currentTotal')
+    }
+  }),
+
+  Template.currentOrder.helpers({
+    itemList() {
+      return Session.get('itemList')
+    },
+    orderTotal() {
+      return Session.get('currentTotal')
+    }
+  }),
 
   Template.menuMobile.events({
     'click .add-drink' (event) {
       let itemId = event.currentTarget.parentElement.id
       let currentItems = Session.get('currentItems')
+      let orderTotal = Session.get('currentTotal')
+      let listItem = Session.get('itemList')
 
       if (currentItems[itemId]){
         currentItems[itemId] += 1
+        orderTotal += parseInt(MenuItems.findOne({_id: itemId}).price)
+        listItem.push(MenuItems.findOne({_id: itemId}))
       } else {
         currentItems[itemId] = 1
+        orderTotal += parseInt(MenuItems.findOne({_id: itemId}).price)
+        listItem.push(MenuItems.findOne({_id: itemId}))
       }
 
+      Session.set('itemList', listItem)
+      Session.set('currentTotal', orderTotal)
       Session.set('currentItems', currentItems)
     },
     'click .remove-drink' (event) {
       let itemId = event.currentTarget.parentElement.id
       let currentItems = Session.get('currentItems')
+      let orderTotal = Session.get('currentTotal')
+      let listItem = Session.get('itemList')
 
       if (currentItems[itemId] > 0){
         currentItems[itemId] -= 1
+        orderTotal -= parseInt(MenuItems.findOne({_id: itemId}).price)
+        listItem.pop(MenuItems.findOne({_id: itemId}))
       }
+
+      Session.set('itemList', listItem)
+      Session.set('currentTotal', orderTotal)
       Session.set('currentItems', currentItems)
     }
   })
 
   Template.checkoutFooter.events({
     'click .checkout-bottom' (event) {
+      console.log(event)
       MaterializeModal.display({
         bodyTemplate: "currentOrder",
         submitLabel: "Submit",

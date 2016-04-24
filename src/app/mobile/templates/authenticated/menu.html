@@ -46,18 +46,22 @@
 </Template>
 
 <template name="checkoutFooter">
-  <div class="checkout-bottom deep-purple lighten-5">
-    <h4 class="center-align">
-      Order Total: 18.00
+  <div class="checkout-bottom deep-purple lighten-2">
+    <h4 class="center-align white-text">
+      {{prettyPrice orderTotal}}
       <i class="material-icons remove-drink">keyboard_arrow_up</i>
     </h4>
   </div>
 </template>
 
 <template name="currentOrder">
-  <p>Item One</p>
-  <p>Item One</p>
-  <p>Item One</p>
-  <p>Item One</p>
-  <p>Item One</p>
+  <h4>Order:</h4>
+  {{#each itemList}}
+  <p>
+    {{this.name}} <div class="right-align">{{prettyPrice this.price}}</div>
+  </p>
+  {{/each}}
+  <div class="divider"></div>
+  <div class="right-align">{{prettyPrice orderTotal}}</div>
+
 </template>
