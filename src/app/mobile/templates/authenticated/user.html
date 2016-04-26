@@ -9,15 +9,20 @@
             <img class="circle center-block" src='{{fakeData}}' />
             <br />
             <div class="center-align">
-              <button class="btn waves-effect waves-light saveImage" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-              </button>
             </div>
             <br />
             <div class="center-align">
               <div class="waves-effect waves-light btn newImage">New Image</div>
             </div>
-
+            <br>
+            {{#autoForm id="paymentInfo" collection="Meteor.users" doc=currentUser type="update"}}
+              {{>afQuickField name="profile.firstName"}}
+              {{>afQuickField name="profile.lastName"}}
+              <button class="btn waves-effect waves-light right-align saveImage" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            {{/autoForm}}
+            <br><br>
           </div>
         </div>
       </div>
