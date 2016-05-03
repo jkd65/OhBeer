@@ -1,8 +1,17 @@
 <template name="orderConfirmation">
   {{#if Template.subscriptionsReady}}
-  <h3>Order {{orderNum}}</h3>
+    <ul class="collection with-header">
+      <li class="collection-header center-align">
+        <h4>Order {{orderNum}}</h4></li>
+    </ul>
 
-  <p>Your order was submitted!</p>
+    <p>Your order was submitted!</p>
+    <p>Your order is {{orderStatus}}</p>
+    {{#if orderComplete}}
+      <p>
+        Hello World!
+      </p>
+    {{/if}}
   {{else}}
     {{> loading}}
   {{/if}}

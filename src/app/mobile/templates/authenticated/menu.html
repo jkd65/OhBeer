@@ -55,6 +55,7 @@
 </template>
 
 <template name="currentOrder">
+  <div class="container">
   <h4>Order:</h4>
   {{#each itemList}}
   <p>
@@ -63,4 +64,5 @@
   {{/each}}
   <div class="divider"></div>
   <div class="right-align">{{prettyPrice orderTotal}}</div>
+  </div>
 </template>

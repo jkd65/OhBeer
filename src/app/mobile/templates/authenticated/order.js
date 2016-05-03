@@ -10,9 +10,16 @@ if(Meteor.isCordova){
 
   Template.orderConfirmation.helpers({
     orderNum() {
-      console.log(Session.get('orderNumber'))
-      let order = Session.get('orderNumber')
       return Tickets.findOne().orderNum
+    },
+    orderStatus() {
+      return Tickets.findOne().status
+    },
+    orderComplete() {
+      if (Tickets.findOne().status == "complete") {
+        return true
+      }
+      return false
     }
   })
 }

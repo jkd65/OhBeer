@@ -112,7 +112,7 @@ if(Meteor.isCordova){
     'click .checkout-bottom' (event) {
       MaterializeModal.display({
         bodyTemplate: "currentOrder",
-        submitLabel: "Submit",
+        submitLabel: "Checkout",
         bottomSheet: true,
         callback: (err, rtn) => {
           if (rtn.submit){

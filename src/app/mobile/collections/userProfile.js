@@ -14,7 +14,7 @@ userProfile = new SimpleSchema({
     optional: true
   },
   lastName: {
-    type: String
+    type: String,
     optional: true
   },
   card: {
