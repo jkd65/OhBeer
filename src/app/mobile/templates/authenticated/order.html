@@ -1,18 +1,109 @@
+<Template name="orderConfirmation">
+{{#if Template.subscriptionsReady}}
+  <ul class="collection with-header">
+    <li class="collection-header center-align">
+      <h4>Order {{orderNum}}</h4></li>
+  </ul>
+
+  <ul class="collection with-header z-depth-2">
+
+    <li class="collection-header center-align">
+      <h5>Your order was submitted!</h5>
+    </li>
+
+    {{#if orderStatus}}
+      {{#if orderPending}}
+        <li class="collection-item center-align">
+          <div>
+            <h6>Waiting on the bartender to start your order</h6>
+          </div>
+        </li>
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+      {{/if}}
+      {{#if orderStarted}}
+        <li class="collection-item center-align">
+          <div>
+            <h6>Your order has been started, shouldn't be much longer!</h6>
+          </div>
+        </li>
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+      {{/if}}
+      {{#if orderDelivering}}
+        <li class="collection-item center-align">
+          <div>
+            <h6>Your drinks are on their way</h6>
+          </div>
+        </li>
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+      {{/if}}
+      {{#if orderRejected}}
+        <li class="collection-item center-align">
+          <div>
+            <h6>Your order has been rejected :(</h6>
+            <br>
+            <a href="/bars" class="waves-effect waves-light btn">Return to Bars</a>
+            <p>
+              This could be for a number of reasons such as, not being 21, being to drunk, etc... Please find your bartender or server if you have any questions.
+            </p>
+          </div>
+        </li>
+      {{/if}}
+      {{#if orderOos}}
+        <li class="collection-item center-align">
+          <div>
+            <h6>We just ran out of the drink you wanted</h6>
+            <br>
+            <a href="/bars" class="waves-effect waves-light btn">Return to bars</a>
+          </div>
+        </li>
+      {{/if}}
+      {{#if orderComplete}}
+        <li class="collection-item center-align">
+          <div>
+            <h6>Your order has been delivered!</h6>
+            <br>
+            <a href="/bars" class="waves-effect waves-light btn">Confirm</a>
+            <p>
+              If you have not yet recieved your drink, please wave down your bartender or your server and ask for clarification
+            </p>
+          </div>
+        </li>
+      {{/if}}
+    {{/if}}
+  </ul>
+{{/if}}
+</Template>
+
+
+
+<!--
 <template name="orderConfirmation">
   {{#if Template.subscriptionsReady}}
     <ul class="collection with-header">
       <li class="collection-header center-align">
         <h4>Order {{orderNum}}</h4></li>
     </ul>
-
-    <p>Your order was submitted!</p>
-    <p>Your order is {{orderStatus}}</p>
-    {{#if orderComplete}}
-      <p>
-        Hello World!
-      </p>
-    {{/if}}
-  {{else}}
-    {{> loading}}
+    <div class="collection with-header z-depth-2">
+      <ul>
+        <li class="collection center-aligh">
+            <h5>Your order was submitted!</h5>
+        </li>
+      </ul>
+      <p>Your order is {{orderStatus}}</p>
+      {{#if orderComplete}}
+        <p>
+          Hello World!
+        </p>
+      {{/if}}
+    </div>
+    {{else}}
+      {{> loading}}
   {{/if}}
 </template>
+-->

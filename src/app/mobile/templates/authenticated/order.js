@@ -20,6 +20,38 @@ if(Meteor.isCordova){
         return true
       }
       return false
+    },
+    orderPending() {
+      if(Tickets.findOne().status == "pending") {
+        return true
+      }
+      return false
+    },
+    orderStarted() {
+      if (Tickets.findOne().status == "started") {
+        return true
+      }
+      return false
+    },
+    orderDelivering() {
+      if (Tickets.findOne().status == "delivering") {
+        return true
+      }
+      return false
+    },
+    orderRejected() {
+      if (Tickets.findOne().status == "rejected") {
+        return true
+      }
+      return false
+    },
+    orderOos() {
+      if (Tickets.findOne().status == "oos") {
+        return true
+      }
+      return false
     }
   })
 }
+
+//'pending', 'started', 'delivering', 'complete', 'rejected', 'oos'

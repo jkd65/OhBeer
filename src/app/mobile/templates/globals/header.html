@@ -3,11 +3,11 @@
         <nav>
             <div class="nav-wrapper container">
                 <a class="brand-logo center" href="{{brandLink}}">Oh, Beer!</a>
-                {{#if currentUser}}
+               {{#if currentUser}}
                 	{{> authenticatedNavigationMobile}}
-                {{else}}
+               {{else}}
                 	{{> publicNavigationMobile}}
-            	{{/if}}
+        	     {{/if}}
             </div>
         </nav>
     </div>
