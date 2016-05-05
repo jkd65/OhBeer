@@ -20,3 +20,27 @@
       {{/each}}
     </ul>
 </template>
+
+
+<!--
+{{#if Template.subscriptionsReady}}
+<div class="jumbotron text-center" style="padding: 20px;">
+  <h4>Hello,</h4>
+  <h5>{{currentUser.emails.[0].address}}</h5>
+  <br><br>
+  <p>Would you like us to match you to your bar? If you would
+    like to manually select your bar please navigate to 'All Bars'</p>
+  <p style="font-size: 16px; color: #aaa;">Turn on your location to
+    get started</p>
+  <button class="btn waves-effect waves-light location" type="submit"
+  name="action">Locate<i class="material-icons right">send</i>
+  </button>
+  {{#if getLocation}}
+  {{getLocation.lat}}
+  {{getLocation.lng}}
+  {{/if}}
+</div>
+{{else}}
+  {{>loading}}
+{{/if}}
+-->

@@ -1,13 +1,17 @@
-<template name="indexMobile">
+<!--<template name="indexMobile">
   {{#if Template.subscriptionsReady}}
   <div class="jumbotron text-center" style="padding: 20px;">
     <h4>Hello,</h4>
-    <h5>{{currentUser.emails.[0].address}}</h5>
+    <img class="circle responsive-img" src="{{currentUser.profile.profilePicture}}" alt="" />
+    {{currentUser.profile.firstName}}
+    {{currentUser.emails.[0].address}}
     <br><br>
-    <p>Would you like us to match you to your bar? If you would like to manually select your bar please navigate to 'All Bars'</p>
-    <p style="font-size: 16px; color: #aaa;">Turn on your location to get started</p>
-    <button class="btn waves-effect waves-light location" type="submit" name="action">Locate
-      <i class="material-icons right">send</i>
+    <p>Would you like us to match you to your bar? If you would
+      like to manually select your bar please navigate to 'All Bars'</p>
+    <p style="font-size: 16px; color: #aaa;">Turn on your location to
+      get started</p>
+    <button class="btn waves-effect waves-light location" type="submit"
+    name="action">Locate<i class="material-icons right">send</i>
     </button>
     {{#if getLocation}}
     {{getLocation.lat}}
@@ -17,4 +21,33 @@
   {{else}}
     {{>loading}}
   {{/if}}
+</template>-->
+
+<template name="indexMobile">
+  <div class="valign-wrapper valign-helper-logged-out">
+    <div class="container valign">
+      <div class="row">
+        <div class="col s12 white z-depth-1 inner-padding">
+          <div class="row">
+            <h4 class="page-header center">{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</h4>
+
+            <img class="circle center-block" src='{{currentUser.profile.profilePicture}}' />
+            <hr>
+
+            <h5 class="center">Statistic 1</h5>
+            <p>
+
+            </p>
+            <hr>
+            <h5 class="center">Statistic 2</h5>
+            <p>
+
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </template>

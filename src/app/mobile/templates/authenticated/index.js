@@ -1,4 +1,7 @@
-  if (Meteor.isCordova){
+import faker from 'faker'
+import Highcharts from 'highcharts'
+
+if (Meteor.isCordova){
 
   Template.indexMobile.onCreated( () => {
       Template.instance().subscribe('allBars')
@@ -13,6 +16,9 @@
       let singleBar = Bars.findOne()
       console.log(singleBar)
       return Bars.find()
+    },
+    getProfilePicture() {
+      return false
     }
   })
 
@@ -21,6 +27,5 @@
       Session.set('currentLocation', Geolocation.latLng());
     }
   })
-
 
 }

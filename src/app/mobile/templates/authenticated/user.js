@@ -8,6 +8,7 @@ if (Meteor.isCordova) {
 
   Template.userMobile.helpers({
     fakeData(){
+      console.log(faker.image.avatar())
       return Session.get("profilePicture");
     }
   })
